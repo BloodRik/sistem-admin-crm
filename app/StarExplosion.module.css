@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+.explosion {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, white 0%, transparent 70%);
+  animation: explosion 3s infinite;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  animation: zoomIn 3s infinite;
+}
+
+@keyframes explosion {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    font-size: 20px;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    font-size: 30px;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    font-size: 40px;
+  }
+}
